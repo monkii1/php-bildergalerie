@@ -1,0 +1,27 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+main {
+  width: 1000px;
+  padding-top: 32px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+h1 {
+  font-family: 'Pacifico', cursive;
+  text-align: center;
+}
+
+.imgcontainer {
+background-color: #853030;
+}
+
+.imgcontainer img {
+  width: 400px;
+  max-height: 266px;
+  opacity: 1;
+}
