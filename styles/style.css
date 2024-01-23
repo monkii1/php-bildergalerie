@@ -4,24 +4,55 @@
   box-sizing: border-box;
 }
 
+body {
+  max-width: 100%;
+}
+
 main {
-  width: 1000px;
   padding-top: 32px;
+}
+
+.container {
+  margin: 0 auto;
+  width: 1200px;
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
+  gap: 18px;
 }
 
 h1 {
   font-family: 'Pacifico', cursive;
   text-align: center;
+  color: aqua;
 }
 
 .imgcontainer {
-background-color: #853030;
+  background-color: white;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+figure {
+  display: flex;
+  flex-direction: column;
+}
+
+figcaption {
+margin-bottom: 0;
+color: #333;
+padding: 8px 0;
 }
 
 .imgcontainer img {
+  border-radius: 0;
   width: 400px;
   max-height: 266px;
   opacity: 1;
+}
+
+.imgcontainer:hover {
+  scale: 1.02;
+  z-index: 99;
+  cursor: pointer;
 }

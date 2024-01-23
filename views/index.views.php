@@ -18,7 +18,17 @@
   </header>
 
   <main>
-
+    <div class="container">
+      <?php foreach($entries AS $image): ?>
+        <div class="imgcontainer">
+          <figure>
+            <img src="./images/<?php echo $image['src']; ?>.jpg" alt="">
+            <figcaption><?php echo $image['desc']; ?></figcaption>
+          </figure>
+        </div>
+      <?php endforeach;?>
+    </div>
+<!-- 
     <div class="imgcontainer">
       <figure>
         <img src="./images/davies-designs-studio-x0DuoNSYP8g-unsplash.jpg" alt="">
@@ -43,7 +53,7 @@
         <figcaption>Eine Blume die von einer Hummel besucht wird.</figcaption>
       </figure>
     </div>
-  </main>
+  </main> -->
 
 </body>
 
