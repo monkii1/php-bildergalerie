@@ -12,6 +12,15 @@ main {
   padding-top: 32px;
 }
 
+.pagination {
+  display: flex;
+  list-style: none;
+}
+
+.pagination li {
+  padding: 2px;
+}
+
 .container {
   margin: 0 auto;
   width: 1200px;
@@ -28,7 +37,7 @@ h1 {
 }
 
 .imgcontainer {
-  background-color: white;
+  background-color: #ebebeb;
   border-radius: 5px;
   overflow: hidden;
 }
@@ -46,8 +55,8 @@ padding: 8px 0;
 
 .imgcontainer img {
   border-radius: 0;
-  width: 400px;
-  max-height: 266px;
+  width: 350px;
+  height: 233px;
   opacity: 1;
 }
 

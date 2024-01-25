@@ -18,43 +18,55 @@
   </header>
 
   <main>
-    <div class="container">
-      <?php foreach($entries AS $image): ?>
-        <div class="imgcontainer">
-          <figure>
-            <img src="./images/<?php echo $image['src']; ?>.jpg" alt="">
-            <figcaption><?php echo $image['desc']; ?></figcaption>
-          </figure>
-        </div>
-      <?php endforeach;?>
-    </div>
-<!-- 
-    <div class="imgcontainer">
-      <figure>
-        <img src="./images/davies-designs-studio-x0DuoNSYP8g-unsplash.jpg" alt="">
-        <figcaption>Eine Blume die von einer Hummel besucht wird.</figcaption>
-      </figure>
-    </div>
-    <div class="imgcontainer">
-      <figure>
-        <img src="./images/fermin-rodriguez-penelas-b8kEUZqMNoQ-unsplash.jpg" alt="">
-        <figcaption>Eine Blume die von einer Hummel besucht wird.</figcaption>
-      </figure>
-    </div>
-    <div class="imgcontainer">
-      <figure>
-        <img src="./images/keegan-houser--Q_t4SCN8c4-unsplash.jpg" alt="">
-        <figcaption>Eine Blume die von einer Hummel besucht wird.</figcaption>
-      </figure>
-    </div>
-    <div class="imgcontainer">
-      <figure>
-        <img src="./images/zachary-kadolph-1utQVafuNaU-unsplash.jpg" alt="">
-        <figcaption>Eine Blume die von einer Hummel besucht wird.</figcaption>
-      </figure>
-    </div>
-  </main> -->
 
+  <?php var_dump($countTotal['anzahl']);?>
+
+  <?php
+    $totalPages = ceil($countTotal['anzahl'] / $perPage);
+    var_dump($totalPages);
+  ?>
+
+  <?php if($totalPages > 1): ?>
+    <ul class="pagination">
+      <?php 
+      for($x = 1; $x <= $totalPages; $x++): ?>
+        <li>
+          <a href="index.php?<?php echo http_build_query(['page' => $x]);?>">
+          <?php echo e($x); ?>
+        </a>
+        </li>
+      <?php endfor; ?>
+    </ul>
+  <?php endif;?>
+
+  <div class="container">
+    <?php foreach($entries AS $image): ?>
+      <div class="imgcontainer">
+        <a href="image.php?<?php echo http_build_query(['image' => $image["src"]]);?>">
+        <figure>
+          <img src="./images/<?php echo e($image['src']); ?>.jpg" alt="">
+          <figcaption><?php echo e($image['desc']); ?></figcaption>
+        </figure>
+        </a>
+      </div>
+    <?php endforeach;?>
+  </div>
+
+  <?php if($totalPages > 1): ?>
+      <ul class="pagination">
+        <?php 
+        for($x = 1; $x <= $totalPages; $x++): ?>
+          <li>
+            <a href="index.php?<?php echo http_build_query(['page' => $x]);?>">
+            <?php echo e($x); ?>
+          </a>
+          </li>
+        <?php endfor; ?>
+      </ul>
+    <?php endif;?>
 </body>
 
+<footer>
+  <p>Lernprojekt Bildergalerie</p>
+</footer>
 </html>
