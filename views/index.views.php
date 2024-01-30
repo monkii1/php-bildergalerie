@@ -19,11 +19,12 @@
 
   <main>
 
-  <?php var_dump($countTotal['anzahl']);?>
-
   <?php
-    $totalPages = ceil($countTotal['anzahl'] / $perPage);
-    var_dump($totalPages);
+  $totalPages = ceil($countTotal['anzahl'] / $perPage);
+  /* 
+    var_dump($countTotal['anzahl']);
+    var_dump($totalPages); 
+  */
   ?>
 
   <?php if($totalPages > 1): ?>
@@ -39,10 +40,12 @@
     </ul>
   <?php endif;?>
 
+  <?php //var_dump($_GET['page']);?>
+
   <div class="container">
     <?php foreach($entries AS $image): ?>
       <div class="imgcontainer">
-        <a href="image.php?<?php echo http_build_query(['image' => $image["src"]]);?>">
+        <a href="image.php?<?php echo http_build_query(['id' => $image["id"]]);?>">
         <figure>
           <img src="./images/<?php echo e($image['src']); ?>.jpg" alt="">
           <figcaption><?php echo e($image['desc']); ?></figcaption>
@@ -64,9 +67,11 @@
         <?php endfor; ?>
       </ul>
     <?php endif;?>
-</body>
+  </main>
 
-<footer>
-  <p>Lernprojekt Bildergalerie</p>
-</footer>
+
+  <footer>
+    <p>Lernprojekt Bildergalerie</p>
+  </footer>
+</body>
 </html>

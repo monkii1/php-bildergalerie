@@ -65,3 +65,30 @@ padding: 8px 0;
   z-index: 99;
   cursor: pointer;
 }
+
+#singleImg {
+  width: 700px;
+  margin: 0 auto;
+}
+
+#headline {
+  text-decoration: none;
+}
+
+#back {
+  display: flex;
+  justify-content: end;
+}
+
+#singleFigure {
+  align-items: center;
+}
+
+#singleImage {
+  width: 700px;
+}
+
+
+#singleCaption {
+  font-size: 24px;
+}
