@@ -24,7 +24,7 @@
       <?php foreach($singleImage AS $image):?>
         <figure id="singleFigure">
           <img id="singleImage" src="./images/<?php echo $image['src'];?>.jpg" alt="">
-          <figcaption id="singleCaption"><?php echo $image['desc'];?></figcaption>
+          <figcaption id="singleCaption"><?php echo $image['title'];?></figcaption>
           <input type="hidden" value="<?php echo $image['id'];?>">
         </figure>
       <?php endforeach;?>
