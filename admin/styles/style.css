@@ -1,0 +1,9 @@
+td {
+  text-align: center;
+}
+
+.adminImg {
+  width: 200px;
+  height: 130px;
+  object-fit: cover;
+}
