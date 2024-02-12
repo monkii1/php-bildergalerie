@@ -2,10 +2,11 @@
 
   require_once __DIR__ . '/inc/all.php';
 
-  $stmt = $pdo->prepare("SELECT * FROM `images`");
-  $stmt->execute();
-  $data = $stmt->fetchAll(PDO::FETCH_ASSOC);
+  $galleryImageRepository = new GalleryImageRepository($pdo);
+  $images = $galleryImageRepository->fetchAll();
 
-  require_once __DIR__ . '/views/admin.view.php';
+  render(__DIR__ . '/views/admin.view.php', [
+    'images' => $images
+  ]);
 
 

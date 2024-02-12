@@ -2,14 +2,16 @@
 require_once __DIR__ . "/inc/all.php";
 
 
+$imgId = $_GET['id'];
+var_dump($imgId);
 
 
 
-  $image = $_GET['id'];
-  $stmt = $pdo->prepare("SELECT * FROM `images` WHERE id = '$image'");
-  $stmt->execute();
-  $singleImage = $stmt->fetchAll(PDO::FETCH_ASSOC);
+$galleryImageRepository = new GalleryImageRepository($pdo);
+$image = $galleryImageRepository->fetchImg($imgId);
 
 
 
-require __DIR__ . "/views/image.views.php";
+render(__DIR__ . '/views/image.view.php', [
+  'image' => $image
+]);
