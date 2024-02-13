@@ -2,8 +2,13 @@
 require __DIR__ . '/inc/all.php';
 
 
-if(!empty($_POST['title']) && !empty($_POST['image'])) echo "Yes";
+if($_SERVER['REQUEST_METHOD'] == 'POST') {
+  if (!empty($title) && !empty($src)) {
+    $galleryImageRepository = new GalleryImageRepository($pdo);
+    $galleryImageRepository->uploadImage($src, $title);
+  }
+} else {
+  header('Location: admin.php');
+}
 
 
-var_dump($_POST['title']);
-var_dump($_POST['image']);
