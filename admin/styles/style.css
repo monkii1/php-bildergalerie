@@ -7,3 +7,30 @@ td {
   height: 130px;
   object-fit: cover;
 }
+
+.btns {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+}
+
+a.btn {
+  font-size: 16px;
+  border-radius: 6px;
+  width: 104px;
+  height: 36px;
+  background-color: #FFB300;
+  font-weight: 600;
+  text-decoration: none;
+  color: #212121;
+  display: block;
+}
+
+a p {
+  padding-top: 4px;
+  margin: auto 0;
+}
+
+a.btn:hover {
+  transform: scale(1.04);
+}
