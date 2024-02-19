@@ -16,9 +16,6 @@
   <header>
     <h1>Adminbereich</h1>
   </header>
-
-  <?php var_dump($_POST);?>
-
   <main>
     <?php echo $content;?>
   </main>

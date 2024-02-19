@@ -17,10 +17,14 @@
       <td><img class="adminImg" src="../images/<?php echo $image->src; ?>.jpg" alt=""></td>
       <td><?php echo $image->title; ?></td>
       <td>
-        <div class="btns">
-          <a class="btn" id="edit-image" href="edit.php?<?php echo http_build_query(['id' => $image->id]); ?>"><p>EDIT</p></a>
-          <a class="btn" id="delete-image" href="delete.php?<?php echo http_build_query(['id' => $image->id]); ?>"><p>DELETE</p></a>
-        </div>
+        <form action="edit.php" method="POST">
+          <input type="hidden" name="id" id="id" value="<?php echo $image->id;?>">
+          <input id="edit" type="submit" value="Edit">
+        </form>
+        <form action="delete.php" method="POST">
+          <input type="hidden" name="id" id="id" value="<?php echo $image->id;?>">
+          <input id="delete" type="submit" value="Delete">
+        </form>
       </td>
     </tr>
 

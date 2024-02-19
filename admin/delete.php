@@ -3,7 +3,7 @@
 
 require_once __DIR__ . '/inc/all.php';
 
-$id = $_GET['id'];
+$id = $_POST['id'];
 
 $galleryImageRepository = new GalleryImageRepository($pdo);
 $fileName = $galleryImageRepository->getImageName($id);

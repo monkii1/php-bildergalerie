@@ -1,7 +1,7 @@
 <?php 
 
   require_once __DIR__ . '/inc/all.php';
-  $id = $_GET['id'];
+  $id = $_POST['id'];
 
   $stmt = $pdo->prepare("SELECT * FROM `images` WHERE id = $id");
   $stmt->execute();
@@ -9,6 +9,7 @@
 
   // var_dump($data);
 
-  require_once __DIR__ . '/views/edit.view.php';
-
+  render(__DIR__ . '/views/edit.view.php', [
+    'data' => $data
+  ]);
 

@@ -68,4 +68,13 @@ class GalleryImageRepository
         };
         return false;
     }
+
+    public function updateTitle(int $id, string $title) {
+        if(isset($title)) {
+            $stmt = $this->pdo->prepare('UPDATE `images` SET `title` = :title WHERE `images`.`id` =  :id');
+            $stmt->bindValue(':title', $title);
+            $stmt->bindValue(':id', $id);
+            $stmt->execute();
+        }
+    }
 }
